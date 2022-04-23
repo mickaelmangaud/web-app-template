@@ -1,0 +1,1 @@
+export { uiReducer, toggleTheme } from './slice';

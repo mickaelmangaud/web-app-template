@@ -1,0 +1,1 @@
+export { uiReducer, toggleIsMenuOpen } from './slice';
