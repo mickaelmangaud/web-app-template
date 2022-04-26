@@ -1,4 +1,4 @@
-import { Prisma, User } from '@prisma/client';
+import { User } from '@prisma/client';
 import { prisma } from '../utils';
 
 class UsersDAO {
@@ -21,9 +21,12 @@ class UsersDAO {
     return await prisma.user.create({ data: user });
   }
 
-  // public async update(user): Promise<User> {
-    // return await prisma.user.update();
-  // }
+  public async update(where: object, user: Partial<User>): Promise<User> {
+    return await prisma.user.update({
+      where,
+      data: user,
+    });
+  }
 }
 
 const usersDAO = UsersDAO.getInstance();

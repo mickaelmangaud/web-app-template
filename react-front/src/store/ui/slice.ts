@@ -3,8 +3,8 @@ import { UIState } from './types';
 
 const initialState: UIState = {
   isMenuOpen: false,
-  themeMode: 'light'
-}
+  themeMode: 'light',
+};
 
 const uiSlice = createSlice({
   name: 'ui',
@@ -12,11 +12,13 @@ const uiSlice = createSlice({
   reducers: {
     toggleTheme: (state) => ({
       ...state,
-      themeMode: state.themeMode === 'light' ? 'dark' : 'light'
-    })
-  }
+      themeMode: state.themeMode === 'light' ? 'dark' : 'light',
+    }),
+  },
 });
 
-export const uiReducer = uiSlice.reducer;
+const uiReducer = uiSlice.reducer;
 
-export const { toggleTheme } = uiSlice.actions;
+const { toggleTheme } = uiSlice.actions;
+
+export { uiReducer, toggleTheme };

@@ -1,6 +1,6 @@
-import { PaletteMode } from "@mui/material";
+import { PaletteMode } from '@mui/material';
 
 interface UIState {
   isMenuOpen: boolean;
-  themeMode: PaletteMode
+  themeMode: PaletteMode;
 }

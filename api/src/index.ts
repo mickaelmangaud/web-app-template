@@ -7,5 +7,5 @@ const app: Application = express();
 configureRoutes(app);
 
 app.listen(PORT, () => {
-    console.log(`App listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });

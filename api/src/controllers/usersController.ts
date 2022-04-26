@@ -1,4 +1,4 @@
-import { usersDAO } from "../dao";
+import { usersDAO } from '../dao';
 
 class UsersController {
   private static instance: UsersController;
@@ -12,8 +12,8 @@ class UsersController {
     return UsersController.instance;
   }
 
-  async getAllUsers() {
-    return await usersDAO.getAll()
+  public async getAllUsers() {
+    return await usersDAO.getAll();
   }
 }
 
@@ -21,6 +21,4 @@ const usersController = UsersController.getInstance();
 
 Object.freeze(usersController);
 
-export {
-  usersController
-}
+export { usersController };
