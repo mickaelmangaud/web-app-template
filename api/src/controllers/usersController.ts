@@ -1,3 +1,4 @@
+import { User } from '@prisma/client';
 import { usersDAO } from '../dao';
 
 class UsersController {
@@ -14,6 +15,10 @@ class UsersController {
 
   public async getAllUsers() {
     return await usersDAO.getAll();
+  }
+
+  public async create(data: User): Promise<User> {
+    return await usersDAO.create(data);
   }
 }
 

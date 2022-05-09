@@ -17,15 +17,25 @@ class UsersDAO {
     return await prisma.user.findMany();
   }
 
-  public async create(user: User): Promise<User> {
-    return await prisma.user.create({ data: user });
+  public async getById(id: number): Promise<User | null> {
+    return await prisma.user.findUnique({ 
+      where: { id }
+    });
   }
 
-  public async update(where: object, user: Partial<User>): Promise<User> {
+  public async create(data: User): Promise<User> {
+    return await prisma.user.create({ data });
+  }
+
+  public async update(id: number, data: Partial<User>): Promise<User> {
     return await prisma.user.update({
-      where,
-      data: user,
+      where: { id },
+      data,
     });
+  }
+
+  public async delete(id: number): Promise<User> {
+    return await prisma.user.delete({ where: { id }});
   }
 }
 
